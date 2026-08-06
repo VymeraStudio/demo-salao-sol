@@ -1,0 +1,107 @@
+---
+import { Image } from 'astro:assets';
+import BotaoMarcar from './BotaoMarcar.astro';
+import foto from '../assets/sobre.jpg';
+---
+
+<section class="sobre" id="sobre">
+  <div class="sobre__int">
+    <div class="sobre__foto">
+      <Image
+        src={foto}
+        alt="Sofia Marques, fundadora do Studio Sol"
+        widths={[400, 700]}
+        sizes="(min-width: 900px) 40vw, 100vw"
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+    </div>
+
+    <div class="sobre__texto">
+      <p class="sobre__kicker">Quem cuida de si</p>
+      <h2>Sofia Marques</h2>
+
+      <p>
+        Trabalho com cabelo há doze anos e continuo a achar que a melhor
+        parte é a conversa antes da tesoura. Perceber a rotina de cada
+        pessoa, o tempo que tem de manhã, o que já correu mal antes —
+        é daí que sai um corte que funciona no dia a dia, e não só à
+        saída do salão.
+      </p>
+
+      <p>
+        Especializei-me em coloração e técnicas de iluminação. Formei-me
+        na Wella Academy e continuo a fazer formação todos os anos,
+        porque a técnica muda e o cabelo de cada pessoa também.
+      </p>
+
+      <p class="sobre__assinatura">
+        No Sol, ninguém sai sem gostar do que vê ao espelho.
+      </p>
+
+      <BotaoMarcar variante="contorno" texto="Marcar a sua hora" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .sobre {
+    background: var(--fundo);
+    padding-block: var(--e-xl);
+  }
+
+  .sobre__int {
+    max-width: var(--largura-max);
+    margin-inline: auto;
+    padding-inline: var(--e-sm);
+    display: grid;
+    gap: var(--e-lg);
+  }
+
+  .sobre__foto {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--fundo-alt);
+  }
+
+  .sobre__foto :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sobre__kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--acento);
+    margin: 0 0 var(--e-xs);
+  }
+
+  .sobre h2 {
+    font-size: var(--t-h2);
+    margin: 0 0 var(--e-md);
+  }
+
+  .sobre__texto p {
+    max-width: 52ch;
+    margin: 0 0 var(--e-sm);
+  }
+
+  .sobre__assinatura {
+    font-family: var(--fonte-titulo);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--texto-suave);
+    margin-bottom: var(--e-md) !important;
+  }
+
+  @media (min-width: 900px) {
+    .sobre__int {
+      grid-template-columns: 0.85fr 1fr;
+      gap: var(--e-xl);
+      align-items: center;
+    }
+  }
+</style>

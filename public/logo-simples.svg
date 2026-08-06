@@ -1,0 +1,5 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sol">
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#C8A96B" stroke-width="3"/>
+  <text x="100" y="100" text-anchor="middle" dominant-baseline="central"
+        font-family="Cormorant Garamond, Georgia, serif" font-size="130" fill="#C8A96B">S</text>
+</svg>

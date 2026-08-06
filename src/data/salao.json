@@ -1,0 +1,21 @@
+{
+  "nome": "Sol",
+  "nomeCompleto": "Studio Sol",
+  "slogan": "Beleza com leveza, cuidado e personalidade.",
+  "telefone": "+351 912 345 678",
+  "whatsapp": "351912345678",
+  "email": "ola@studiosol.pt",
+  "morada": {
+    "rua": "Rua da Prata 120",
+    "codigoPostal": "1100-052",
+    "cidade": "Lisboa",
+    "lat": 38.7118,
+    "lng": -9.1367
+  },
+  "horarios": [
+    { "dia": "Terça a Sexta", "horas": "10:00 – 19:00" },
+    { "dia": "Sábado", "horas": "09:00 – 18:00" },
+    { "dia": "Domingo e Segunda", "horas": "Encerrado" }
+  ],
+  "instagram": "https://instagram.com/studiosol"
+}

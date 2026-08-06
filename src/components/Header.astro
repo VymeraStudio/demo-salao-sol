@@ -1,5 +1,6 @@
 ---
 import salao from '../data/salao.json';
+import conteudo from '../data/conteudo.json';
 import BotaoMarcar from './BotaoMarcar.astro';
 ---
 
@@ -11,10 +12,9 @@ import BotaoMarcar from './BotaoMarcar.astro';
     </a>
 
     <nav class="cab__nav" aria-label="Navegação principal">
-      <a href="#servicos">Serviços</a>
-      <a href="#trabalhos">Trabalhos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contactos">Contactos</a>
+      {conteudo.navegacao.map((item) => (
+        <a href={item.ancora}>{item.texto}</a>
+      ))}
     </nav>
 
     <BotaoMarcar classe="cab__btn" />

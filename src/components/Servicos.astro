@@ -1,17 +1,15 @@
 ---
 import servicos from '../data/servicos.json';
+import conteudo from '../data/conteudo.json';
 import BotaoMarcar from './BotaoMarcar.astro';
 ---
 
 <section class="serv" id="servicos">
   <div class="serv__int">
     <header class="serv__topo">
-      <p class="serv__kicker">Preçário</p>
-      <h2>Serviços</h2>
-      <p class="serv__nota">
-        Valores indicativos. O preço final depende do comprimento
-        e da densidade do cabelo — confirmamos sempre antes de começar.
-      </p>
+      <p class="serv__kicker">{conteudo.servicos.kicker}</p>
+      <h2>{conteudo.servicos.titulo}</h2>
+      <p class="serv__nota">{conteudo.servicos.nota}</p>
     </header>
 
     <div class="serv__grelha">
@@ -32,7 +30,7 @@ import BotaoMarcar from './BotaoMarcar.astro';
     </div>
 
     <div class="serv__acao">
-      <BotaoMarcar texto="Marcar hora" />
+      <BotaoMarcar />
     </div>
   </div>
 </section>

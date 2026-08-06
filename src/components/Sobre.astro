@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import conteudo from '../data/conteudo.json';
 import BotaoMarcar from './BotaoMarcar.astro';
 import foto from '../assets/sobre.jpg';
 ---
@@ -9,7 +10,7 @@ import foto from '../assets/sobre.jpg';
     <div class="sobre__foto">
       <Image
         src={foto}
-        alt="Sofia Marques, fundadora do Studio Sol"
+        alt={conteudo.sobre.altFoto}
         widths={[400, 700]}
         sizes="(min-width: 900px) 40vw, 100vw"
         format="webp"
@@ -19,28 +20,14 @@ import foto from '../assets/sobre.jpg';
     </div>
 
     <div class="sobre__texto">
-      <p class="sobre__kicker">Quem cuida de si</p>
-      <h2>Sofia Marques</h2>
+      <p class="sobre__kicker">{conteudo.sobre.kicker}</p>
+      <h2>{conteudo.sobre.nome}</h2>
 
-      <p>
-        Trabalho com cabelo há doze anos e continuo a achar que a melhor
-        parte é a conversa antes da tesoura. Perceber a rotina de cada
-        pessoa, o tempo que tem de manhã, o que já correu mal antes —
-        é daí que sai um corte que funciona no dia a dia, e não só à
-        saída do salão.
-      </p>
+      {conteudo.sobre.paragrafos.map((p) => <p>{p}</p>)}
 
-      <p>
-        Especializei-me em coloração e técnicas de iluminação. Formei-me
-        na formação avançada em coloraçãoe continuo a fazer formação todos os anos,
-        porque a técnica muda e o cabelo de cada pessoa também.
-      </p>
+      <p class="sobre__assinatura">{conteudo.sobre.assinatura}</p>
 
-      <p class="sobre__assinatura">
-        No Sol, ninguém sai sem gostar do que vê ao espelho.
-      </p>
-
-      <BotaoMarcar variante="contorno" texto="Marcar a sua hora" />
+      <BotaoMarcar variante="contorno" texto={conteudo.sobre.botao} />
     </div>
   </div>
 </section>

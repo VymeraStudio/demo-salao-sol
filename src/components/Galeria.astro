@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import conteudo from '../data/conteudo.json';
 
 const modulos = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/galeria/*.{jpg,jpeg,png}',
@@ -11,45 +12,35 @@ const imagens = Object.keys(modulos)
   .sort()
   .map((caminho) => modulos[caminho].default)
   .filter(Boolean);
-
-const legendas = [
-  'Balayage em tons de mel',
-  'Corte bob com ondas suaves',
-  'Coloração castanha com reflexos',
-  'Madeixas iluminadas',
-  'Verniz gel em tom nude',
-  'Brushing com volume',
-];
 ---
 
-<section class="gal" id="trabalhos">
-  <div class="gal__int">
-    <header class="gal__topo">
-      <p class="gal__kicker">Portefólio</p>
-      <h2>Trabalhos</h2>
-      <p class="gal__nota">
-        Alguns dos resultados criados no estúdio. Cada cabelo é único —
-        o resultado é sempre pensado para si.
-      </p>
-    </header>
+{imagens.length > 0 && (
+  <section class="gal" id="trabalhos">
+    <div class="gal__int">
+      <header class="gal__topo">
+        <p class="gal__kicker">{conteudo.galeria.kicker}</p>
+        <h2>{conteudo.galeria.titulo}</h2>
+        <p class="gal__nota">{conteudo.galeria.nota}</p>
+      </header>
 
-    <ul class="gal__grelha">
-      {imagens.map((img, i) => (
-        <li class="gal__item">
-          <Image
-            src={img}
-            alt={legendas[i] ?? 'Trabalho realizado no Studio Sol'}
-            widths={[400, 700]}
-            sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"
-            format="webp"
-            quality={78}
-            loading="lazy"
-          />
-        </li>
-      ))}
-    </ul>
-  </div>
-</section>
+      <ul class="gal__grelha">
+        {imagens.map((img, i) => (
+          <li class="gal__item">
+            <Image
+              src={img}
+              alt={conteudo.galeria.legendas[i] ?? conteudo.galeria.legendaFallback}
+              widths={[350, 600]}
+              sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw"
+              format="webp"
+              quality={72}
+              loading="lazy"
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
 
 <style>
   .gal {

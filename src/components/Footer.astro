@@ -1,5 +1,6 @@
 ---
 import salao from '../data/salao.json';
+import conteudo from '../data/conteudo.json';
 
 const ano = new Date().getFullYear();
 ---
@@ -20,17 +21,15 @@ const ano = new Date().getFullYear();
     </nav>
 
     <div class="rod__empresa">
-      <p>{salao.nomeCompleto}, Unipessoal Lda. · NIF 000 000 000</p>
+      <p>{salao.legal.denominacao} · NIF {salao.legal.nif}</p>
       <p>{salao.morada.rua}, {salao.morada.codigoPostal} {salao.morada.cidade}</p>
       <p class="rod__ral">
-        Em caso de litígio de consumo, o consumidor pode recorrer ao Centro de
-        Arbitragem de Conflitos de Consumo de Lisboa.
+        Em caso de litígio de consumo, o consumidor pode recorrer ao {salao.legal.centroArbitragem}.
       </p>
     </div>
 
     <p class="rod__base">
-      © {ano} {salao.nomeCompleto} · Site por
-      <a href="https://vymera.pt" target="_blank" rel="noopener">Vymera Studio</a>
+      © {ano} {salao.nomeCompleto} · Site por <a href={conteudo.assinaturaAgencia.url} target="_blank" rel="noopener">{conteudo.assinaturaAgencia.texto}</a>
     </p>
   </div>
 </footer>

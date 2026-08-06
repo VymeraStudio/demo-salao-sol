@@ -11,10 +11,7 @@ import BarraFixa from '../components/BarraFixa.astro';
 import salao from '../data/salao.json';
 ---
 
-<Layout
-  titulo={`${salao.nomeCompleto} — Cabeleireiro e estética em ${salao.morada.cidade}`}
-  descricao="Cortes, coloração, madeixas e unhas em Lisboa. Marque hora pelo WhatsApp."
->
+<Layout titulo={salao.seo.titulo} descricao={salao.seo.descricao}>
   <Header />
   <main>
     <Hero />

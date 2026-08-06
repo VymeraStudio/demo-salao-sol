@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import salao from '../data/salao.json';
+import conteudo from '../data/conteudo.json';
 import BotaoMarcar from './BotaoMarcar.astro';
 import fotoHero from '../assets/hero.jpg';
 ---
@@ -9,7 +10,7 @@ import fotoHero from '../assets/hero.jpg';
   <div class="hero__foto">
     <Image
       src={fotoHero}
-      alt="Coloração e madeixas realizadas no Studio Sol"
+      alt={`Trabalho realizado no ${salao.nomeCompleto}`}
       widths={[600, 900, 1400]}
       sizes="(min-width: 900px) 45vw, 100vw"
       loading="eager"
@@ -21,11 +22,11 @@ import fotoHero from '../assets/hero.jpg';
 
   <div class="hero__texto">
     <img src="/logo.svg" alt="" width="96" height="96" class="hero__selo" />
-    <p class="hero__sobre">Cabelo e estética · Lisboa</p>
+    <p class="hero__sobre">{salao.categoria} · {salao.morada.cidade}</p>
     <h1>{salao.nome}</h1>
     <p class="hero__slogan">{salao.slogan}</p>
-    <BotaoMarcar />
-    <p class="hero__nota">Resposta no mesmo dia via WhatsApp</p>
+    <BotaoMarcar texto={conteudo.hero.botao} />
+    <p class="hero__nota">{conteudo.hero.nota}</p>
   </div>
 </section>
 

@@ -1,5 +1,6 @@
 ---
 import salao from '../data/salao.json';
+import conteudo from '../data/conteudo.json';
 
 const enderecoCompleto = `${salao.morada.rua}, ${salao.morada.codigoPostal} ${salao.morada.cidade}`;
 const linkMapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -11,8 +12,8 @@ const telefoneLimpo = salao.telefone.replace(/\s/g, '');
 <section class="loc" id="contactos">
   <div class="loc__int">
     <header class="loc__topo">
-      <p class="loc__kicker">Visite-nos</p>
-      <h2>Onde estamos</h2>
+      <p class="loc__kicker">{conteudo.localizacao.kicker}</p>
+      <h2>{conteudo.localizacao.titulo}</h2>
     </header>
 
     <div class="loc__grelha">
@@ -44,11 +45,12 @@ const telefoneLimpo = salao.telefone.replace(/\s/g, '');
         <ul class="loc__contactos">
           <li><a href={`tel:${telefoneLimpo}`}>{salao.telefone}</a></li>
           <li><a href={`mailto:${salao.email}`}>{salao.email}</a></li>
-          <li>
-            <a href={salao.instagram} target="_blank" rel="noopener">
-              Instagram
-            </a>
-          </li>
+          {salao.instagram && (
+            <li><a href={salao.instagram} target="_blank" rel="noopener">Instagram</a></li>
+          )}
+          {salao.facebook && (
+            <li><a href={salao.facebook} target="_blank" rel="noopener">Facebook</a></li>
+          )}
         </ul>
       </div>
     </div>

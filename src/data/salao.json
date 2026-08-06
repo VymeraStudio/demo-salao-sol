@@ -2,6 +2,7 @@
   "nome": "Sol",
   "nomeCompleto": "Studio Sol",
   "slogan": "Beleza com leveza, cuidado e personalidade.",
+  "categoria": "Cabelo e estética",
   "telefone": "+351 912 345 678",
   "whatsapp": "351912345678",
   "email": "ola@studiosol.pt",
@@ -17,5 +18,15 @@
     { "dia": "Sábado", "horas": "09:00 – 18:00" },
     { "dia": "Domingo e Segunda", "horas": "Encerrado" }
   ],
-  "instagram": "https://instagram.com/studiosol"
+  "instagram": "https://instagram.com/studiosol",
+  "facebook": "",
+  "legal": {
+    "denominacao": "Studio Sol, Unipessoal Lda.",
+    "nif": "000 000 000",
+    "centroArbitragem": "Centro de Arbitragem de Conflitos de Consumo de Lisboa"
+  },
+  "seo": {
+    "titulo": "Studio Sol — Cabeleireiro e estética em Lisboa",
+    "descricao": "Cortes, coloração, madeixas e unhas em Lisboa. Marque hora pelo WhatsApp."
+  }
 }
